@@ -34,4 +34,4 @@ npm test
 
 ## Notes on TypeScript/JSX
 - The majority of the app is written as JSX files (`.jsx`) for readability as requested.
-- The entry file is `src/index.tsx` and contains a very small TypeScript wrapper with proper semicolons and minimal `HTMLElement` typing to avoid the "Missing semicolon" or parsing errors when TypeScript tooling is present.
+- The entry file is `src/index.jsx` and contains a very small TypeScript wrapper with proper semicolons and minimal `HTMLElement` typing to avoid the "Missing semicolon" or parsing errors when TypeScript tooling is present.
