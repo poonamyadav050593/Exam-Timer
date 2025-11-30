@@ -1,70 +1,37 @@
-# Getting Started with Create React App
+# Exam Timer (React — JSX)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A single-page React application that implements an exam timer with violation simulation and session summary. The project is primarily JSX-based, however the app entry file is a TypeScript `index.tsx` (minimal, typed wrapper) to avoid build/runtime issues in environments expecting a TypeScript entry point.
 
-## Available Scripts
+> **Why this change?**
+> When running in a project scaffold that expects `index.tsx`, providing `index.jsx` can cause the bundler or TypeScript checker to try to parse a `.tsx` entry and fail due to missing semicolons or type expectations. To be robust we provide a tiny, well-formed `index.tsx` which imports the JSX components.
 
-In the project directory, you can run:
+## Features
+- 45-minute countdown timer in `MM:SS` format
+- Pause / Resume
+- Visual warning at 5 minutes (yellow) and critical blink at 1 minute (red)
+- Browser notifications at 5 and 1 minute marks
+- Optional sound toggle for 1-minute alert
+- Document title shows remaining time when inactive
+- Simulated proctoring violations (3 types) with top strip showing total violations and a badge
+- Violation log with timestamps
+- Session summary at timer end (total time taken + violations by type + timeline)
+- Edge-case handling: `onbeforeunload` prompt if timer is active
+- Basic unit test for timer logic
 
-### `npm start`
+## Setup
+1. Install packages:
+```bash
+npm install
+```
+2. Start dev server:
+```bash
+npm start
+```
+3. Run tests (optional):
+```bash
+npm test
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Notes on TypeScript/JSX
+- The majority of the app is written as JSX files (`.jsx`) for readability as requested.
+- The entry file is `src/index.tsx` and contains a very small TypeScript wrapper with proper semicolons and minimal `HTMLElement` typing to avoid the "Missing semicolon" or parsing errors when TypeScript tooling is present.

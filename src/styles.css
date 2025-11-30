@@ -1,0 +1,47 @@
+:root{
+  --bg: #f6f7fb;
+  --card: #fff;
+  --accent: #2563eb;
+  --danger: #ef4444;
+  --warning: #f59e0b;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:Inter,system-ui,Arial,Helvetica,sans-serif;background:var(--bg);color:#111}
+.app-root{min-height:100vh;display:flex;flex-direction:column}
+.app-header{background:var(--accent);color:white;padding:1rem 1.25rem;font-weight:600}
+.app-main{flex:1;padding:1.25rem;display:flex;justify-content:center}
+.app-footer{text-align:center;padding:0.5rem 0;color:#666}
+
+.exam-timer{width:100%;max-width:900px}
+.top-strip{display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem}
+.violation-strip{background:#111;color:white;padding:0.4rem 0.6rem;border-radius:6px}
+.badge{background:#fff;color:#111;padding:0.15rem 0.5rem;border-radius:999px;margin-left:0.5rem;font-weight:700}
+.controls-right{display:flex;gap:0.5rem;align-items:center}
+.sound-toggle{font-size:0.9rem}
+.reset-btn{background:#eee;border:1px solid #ddd;padding:0.4rem 0.6rem;border-radius:6px}
+
+.timer-card{background:var(--card);padding:1.25rem;border-radius:12px;box-shadow:0 6px 18px rgba(0,0,0,0.06)}
+.timer-display{font-size:3.2rem;font-weight:700;text-align:center;padding:1rem}
+.timer-actions{display:flex;gap:0.5rem;justify-content:center;margin-bottom:0.75rem}
+.btn{padding:0.5rem 0.8rem;border-radius:8px;border:1px solid #ccc;background:#fff;cursor:pointer}
+.btn.primary{background:var(--accent);color:white;border-color:transparent}
+.btn.danger{background:var(--danger);color:white;border-color:transparent}
+.btn.warning{background:var(--warning);color:white;border-color:transparent}
+
+.warning{border:2px solid var(--warning)}
+.critical{border:2px solid var(--danger)}
+.blink{animation:blink 1s linear infinite}
+@keyframes blink{50%{opacity:0.2}}
+
+.violations{margin-top:0.75rem}
+.violation-buttons{display:flex;gap:0.5rem;flex-wrap:wrap}
+.violation-log{margin-top:0.6rem;background:#fafafa;padding:0.6rem;border-radius:8px}
+.muted{color:#666}
+
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,0.45);display:flex;align-items:center;justify-content:center}
+.overlay-card{background:white;padding:1.25rem;border-radius:12px;max-width:720px;width:90%}
+
+@media (max-width:600px){
+  .timer-display{font-size:2.2rem}
+  .violation-buttons{flex-direction:column}
+}

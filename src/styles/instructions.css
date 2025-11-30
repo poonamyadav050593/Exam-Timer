@@ -1,0 +1,84 @@
+/* Instructions Page Styling */
+
+.instructions {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.instructions-card {
+  background: white;
+  width: 100%;
+  max-width: 820px;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(16, 24, 40, 0.06);
+  padding: 28px;
+}
+
+.instructions-card h2 {
+  margin-top: 0;
+}
+
+.instructions-card p {
+  margin: 8px 0 16px;
+  color: #374151;
+}
+
+.instructions-card ul {
+  padding-left: 20px;
+  margin-top: 0;
+  color: #374151;
+}
+
+.controls {
+  margin-top: 20px;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  border: none;
+  padding: 10px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.btn.primary {
+  background: #0b84ff;
+  color: white;
+}
+
+.btn.secondary {
+  background: transparent;
+  color: #0b1724;
+  border: 1px solid #e6edf8;
+}
+
+.start-btn {
+  font-weight: 600;
+  min-width: 140px;
+}
+
+.note {
+  margin-top: 16px;
+  font-size: 13px;
+  color: #6b7280;
+}
+
+/* Mobile-friendly responsive adjustments */
+@media (max-width: 640px) {
+  .instructions-card {
+    padding: 18px;
+    border-radius: 10px;
+  }
+  .start-btn {
+    width: 100%;
+  }
+  .controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
